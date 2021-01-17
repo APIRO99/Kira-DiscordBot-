@@ -1,8 +1,10 @@
 version: "3.9"
 services:
   bot:
-    image: apiro99/kira
-    network_mode: host
+    build:
+      context: .
+      network: host
     env_file: 
       - .env
+    network_mode: host
     restart: always

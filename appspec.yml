@@ -1,0 +1,15 @@
+version: 0.0
+os: linux
+files:
+  - source: /main.py
+    destination: /usr/src/Kira/
+
+hooks:
+  BeforeInstall:
+    - location: scripts/startApp
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: scripts/stop_server
+      timeout: 300
+      runas: root
